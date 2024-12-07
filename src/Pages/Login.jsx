@@ -1,6 +1,6 @@
 import React from 'react';
 import {Stack, TextField, Typography, Button} from '@mui/material';
-import createAccount from '../assets/createAccount.png';
+import login from '../assets/login.png';
 import {makeStyles} from "@mui/styles";
 
 // Create styles using makeStyles
@@ -24,11 +24,11 @@ const useStyles = makeStyles({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'start',
     },
     header: {
         marginBottom: '2rem',
-        textAlign: 'center',
+        textAlign: 'left',
     },
     form: {
         width: '100%',
@@ -67,7 +67,7 @@ const Register = () => {
         <Stack flexDirection='row' height='100vh' justifyContent='space-between'>
             <Stack className={classes.imageContainer}>
                 <img
-                    src={createAccount}
+                    src={login}
                     alt="create-account"
                     className={classes.image}
                 />
@@ -78,29 +78,15 @@ const Register = () => {
                 {/* Form Header */}
                 <Stack className={classes.header}>
                     <Typography variant="h4" fontWeight="bold">
-                        Create New Account
+                        Welcome 👋
                     </Typography>
                     <Typography variant="body1" color="textSecondary">
-                        Please enter your details
+                        Please login here
                     </Typography>
                 </Stack>
 
                 <form className={classes.form}>
                     <Stack width={'auto'} gap={2}>
-                        <TextField
-                            placeholder="First Name"
-                            label="First Name"
-                            variant="outlined"
-                            fullWidth
-                            className={classes.textField}
-                        />
-                        <TextField
-                            placeholder="Last Name"
-                            label="Last Name"
-                            variant="outlined"
-                            fullWidth
-                            className={classes.textField}
-                        />
                         <TextField
                             placeholder="Email Address"
                             label="Email Address"
@@ -122,7 +108,7 @@ const Register = () => {
                             fullWidth
                             className={classes.button}
                         >
-                            Sign Up
+                            Sign In
                         </Button>
                     </Stack>
 
