@@ -4,6 +4,7 @@ import {makeStyles} from "@mui/styles";
 import { IoSearch } from "react-icons/io5";
 import { IoCartOutline } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
+import {useNavigate} from "react-router-dom";
 
 
 
@@ -44,6 +45,7 @@ const useStyles = makeStyles({
 
 const NavBar = () => {
     const classes = useStyles();
+    const navigate = useNavigate();
     return <Stack className={classes.container} flexDirection={'row'} justifyContent={'space-between'} alignItems={'center'} width={'100%'}>
             <Stack><Typography>Shaanvi</Typography></Stack>
 
@@ -60,7 +62,7 @@ const NavBar = () => {
                 <IoSearch size={'20px'} className={classes.icons}/>
                 <FaRegHeart size={'20px'} className={classes.icons}/>
                 <IoCartOutline  size={'25px'} className={classes.icons}/>
-                <Button className={classes.signInButton} variant="contained">
+                <Button className={classes.signInButton} variant="contained" onClick={() => navigate('/login')}>
                     Sign In
                 </Button>
             </Stack>
