@@ -53,7 +53,7 @@ const NavBar = () => {
     console.log(isMobile);
     return isMobile?(<Stack className={classes.container} flexDirection={'row'} justifyContent={'space-between'} alignItems={'center'} width={'100%'}>
         <GiHamburgerMenu />
-        <Stack><img src={Logo} alt={'logo'} style={{width: '75px'}} className={classes.centerStack}/></Stack>
+        <Stack><img src={Logo} alt={'logo'} style={{width: '75px'}}/></Stack>
 
         {/*<Stack>*/}
         {/*    <Stack className={`${classes.navBar} ${classes.centerStack}`} flexDirection={'row'} alignItems={'center'} justifyContent={'space-between'} gap={4}>*/}
