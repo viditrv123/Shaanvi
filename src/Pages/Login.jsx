@@ -1,5 +1,5 @@
 import React from 'react';
-import {Stack, TextField, Typography, Button} from '@mui/material';
+import {Stack, TextField, Typography, Button, useMediaQuery} from '@mui/material';
 import login from '../assets/login.png';
 import {makeStyles} from "@mui/styles";
 
@@ -58,12 +58,70 @@ const useStyles = makeStyles({
         },
         borderRadius:"10px"
     },
+    loginMobileContainer: {
+        backgroundImage:`url(${login})`,
+        backgroundSize:'cover',
+        width:'100%',
+        height:'100%',
+        backgroundPosition:'center',
+
+    },
+    mobileFormContainer: {
+        padding: "30px",
+        width:'auto',
+        backgroundColor: 'white',
+        opacity: 0.8,
+        margin: 'auto',
+    }
 });
 
 const Register = () => {
     const classes = useStyles();
+    const isMobile = useMediaQuery("(max-width: 1000px)");
 
-    return (
+    return ( isMobile? <Stack flexDirection='column' height='100vh' width='100vw'>
+                <Stack className={classes.loginMobileContainer}>
+                    <Stack className={classes.mobileFormContainer}>
+                        {/* Form Header */}
+                        <Stack className={classes.header}>
+                            <Typography variant="h4" fontWeight="bold">
+                                Welcome 👋
+                            </Typography>
+                            <Typography variant="body1" color="textSecondary">
+                                Please login here
+                            </Typography>
+                        </Stack>
+
+                        <form>
+                            <Stack width={'auto'} gap={2}>
+                                <TextField
+                                    placeholder="Email Address"
+                                    label="Email Address"
+                                    type="email"
+                                    variant="outlined"
+                                    className={classes.textField}
+                                />
+                                <TextField
+                                    placeholder="Password"
+                                    label="Password"
+                                    type="password"
+                                    variant="outlined"
+                                    className={classes.textField}
+                                />
+                                <Button
+                                    variant="contained"
+                                    className={classes.button}
+                                >
+                                    Sign In
+                                </Button>
+                            </Stack>
+
+
+
+                        </form>
+                    </Stack>
+                </Stack>
+            </Stack>:
         <Stack flexDirection='row' height='100vh' justifyContent='space-between'>
             <Stack className={classes.imageContainer}>
                 <img
