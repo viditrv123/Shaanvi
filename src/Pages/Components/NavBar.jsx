@@ -62,7 +62,7 @@ const NavBar = () => {
                 <IoSearch size={'20px'} className={classes.icons}/>
                 <FaRegHeart size={'20px'} className={classes.icons}/>
                 <IoCartOutline  size={'25px'} className={classes.icons}/>
-                <Button className={classes.signInButton} variant="contained" onClick={() => navigate('/login')}>
+                <Button className={classes.signInButton} variant="contained" onClick={() => navigate('/Shaanvi/login')}>
                     Sign In
                 </Button>
             </Stack>
