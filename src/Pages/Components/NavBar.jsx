@@ -6,6 +6,7 @@ import { IoCartOutline } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
 import {useNavigate} from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
+import Logo from '../../assets/Logo.png'
 
 
 
@@ -52,7 +53,7 @@ const NavBar = () => {
     console.log(isMobile);
     return isMobile?(<Stack className={classes.container} flexDirection={'row'} justifyContent={'space-between'} alignItems={'center'} width={'100%'}>
         <GiHamburgerMenu />
-        <Stack><Typography>Shaanvi</Typography></Stack>
+        <Stack><img src={Logo} alt={'logo'} style={{width: '75px'}} className={classes.centerStack}/></Stack>
 
         {/*<Stack>*/}
         {/*    <Stack className={`${classes.navBar} ${classes.centerStack}`} flexDirection={'row'} alignItems={'center'} justifyContent={'space-between'} gap={4}>*/}
@@ -72,10 +73,10 @@ const NavBar = () => {
             </Button>
         </Stack>
     </Stack>):(<Stack className={classes.container} flexDirection={'row'} justifyContent={'space-between'} alignItems={'center'} width={'100%'}>
-            <Stack><Typography>Shaanvi</Typography></Stack>
+            <Stack><img src={Logo} alt={'logo'} style={{width: '75px'}}/></Stack>
 
-            <Stack>
-                <Stack className={`${classes.navBar} ${classes.centerStack}`} flexDirection={'row'} alignItems={'center'} justifyContent={'space-between'} gap={4}>
+        <Stack>
+        <Stack className={`${classes.navBar} ${classes.centerStack}`} flexDirection={'row'} alignItems={'center'} justifyContent={'space-between'} gap={4}>
                     <Typography className={classes.navTabs}>Home</Typography>
                     <Typography className={classes.navTabs}>Shop</Typography>
                     <Typography className={classes.navTabs}>Our Story</Typography>
