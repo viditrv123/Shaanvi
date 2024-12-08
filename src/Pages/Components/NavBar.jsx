@@ -1,10 +1,12 @@
 import React from 'react'
-import {Button, Stack, Typography} from "@mui/material";
+import {Button, Stack, Typography, useMediaQuery} from "@mui/material";
 import {makeStyles} from "@mui/styles";
 import { IoSearch } from "react-icons/io5";
 import { IoCartOutline } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
 import {useNavigate} from "react-router-dom";
+import { GiHamburgerMenu } from "react-icons/gi";
+
 
 
 
@@ -46,7 +48,30 @@ const useStyles = makeStyles({
 const NavBar = () => {
     const classes = useStyles();
     const navigate = useNavigate();
-    return <Stack className={classes.container} flexDirection={'row'} justifyContent={'space-between'} alignItems={'center'} width={'100%'}>
+    const isMobile = useMediaQuery("(max-width: 1000px)");
+    console.log(isMobile);
+    return isMobile?(<Stack className={classes.container} flexDirection={'row'} justifyContent={'space-between'} alignItems={'center'} width={'100%'}>
+        <GiHamburgerMenu />
+        <Stack><Typography>Shaanvi</Typography></Stack>
+
+        {/*<Stack>*/}
+        {/*    <Stack className={`${classes.navBar} ${classes.centerStack}`} flexDirection={'row'} alignItems={'center'} justifyContent={'space-between'} gap={4}>*/}
+        {/*        <Typography className={classes.navTabs}>Home</Typography>*/}
+        {/*        <Typography className={classes.navTabs}>Shop</Typography>*/}
+        {/*        <Typography className={classes.navTabs}>Our Story</Typography>*/}
+        {/*        <Typography className={classes.navTabs}>Blog</Typography>*/}
+        {/*        <Typography className={classes.navTabs}>Contact Us</Typography>*/}
+        {/*    </Stack>*/}
+        {/*</Stack>*/}
+        <Stack flexDirection={'row'} justifyContent={'space-between'} alignItems={'center'} gap={2}>
+            <IoSearch size={'20px'} className={classes.icons}/>
+            <FaRegHeart size={'20px'} className={classes.icons}/>
+            <IoCartOutline  size={'25px'} className={classes.icons}/>
+            <Button className={classes.signInButton} variant="contained" onClick={() => navigate('/Shaanvi/login')}>
+                Sign In
+            </Button>
+        </Stack>
+    </Stack>):(<Stack className={classes.container} flexDirection={'row'} justifyContent={'space-between'} alignItems={'center'} width={'100%'}>
             <Stack><Typography>Shaanvi</Typography></Stack>
 
             <Stack>
@@ -66,6 +91,6 @@ const NavBar = () => {
                     Sign In
                 </Button>
             </Stack>
-    </Stack>
+    </Stack>)
 }
 export default NavBar;
